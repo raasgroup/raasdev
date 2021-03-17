@@ -69,7 +69,8 @@ function nectar_register_js() {
 		wp_register_script('twentytwenty', $nectar_get_template_directory_uri . '/js/jquery.twentytwenty.js', 'jquery', '1.0', TRUE);
 		wp_register_script('stickykit', $nectar_get_template_directory_uri . '/js/stickkit.js', 'jquery', '1.0', TRUE);
 
-		if ( floatval(get_bloginfo('version')) < "3.6" ) {
+
+                if ( floatval(get_bloginfo('version')) < "3.6" ) {
 			wp_register_script('jplayer', $nectar_get_template_directory_uri . '/js/jplayer.min.js', 'jquery', '2.1', TRUE);
 		}
 		wp_register_script('nectarFrontend', $nectar_get_template_directory_uri . '/js/init.js', array('jquery', 'superfish'), '8.5.2', TRUE);
@@ -5950,12 +5951,14 @@ if ( !defined('WPSEO_VERSION') && !class_exists('NY_OG_Admin') && !class_exists(
 }
 /* Our research filter Custom code start */
 add_shortcode( 'download_list', 'get_download_list_func' ); 
-function get_download_list_func() {
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+function get_download_list_func() 
+{
+    $paged = 0; //(get_query_var('paged')) ? get_query_var('paged') : 1;
     $args2 = array(
         'post_type'    => 'wpdmpro',	
         'post_status'     => 'publish',
-        'posts_per_page' => 120,
+        'posts_per_page' => 1500,
         'paged' => $paged
         //'orderby' => $_POST['sort_by_val'],
         //'order' => $order_val, 			
@@ -5963,205 +5966,288 @@ function get_download_list_func() {
         ); 
 
     $my_posts = new WP_Query($args2);
+
     if ( $my_posts->have_posts() ) : 
         while ( $my_posts->have_posts() ) : $my_posts->the_post();
+
             $cat_sub_data=array();
+
             $all_cat_arr = wp_get_post_terms(get_the_ID(), 'wpdmcategory', array("fields" => "all"));
-    
-            if(!empty($all_cat_arr)){
-                foreach($all_cat_arr as $all_cat_val){
+            if(!empty($all_cat_arr))
+            {
+                foreach($all_cat_arr as $all_cat_val)
+                {
                     $cat_sub_data[]=$all_cat_val->name;
                 }
             }
         
             $List = implode(':',$cat_sub_data); 
             $post_data .='<div>';
+
             $image = get_field('company_logo');
-            if ( has_post_thumbnail() ) {
+            $imageurl = $image['url'];
+            if ( has_post_thumbnail() ) 
+            {
                 $img_feature =  get_the_post_thumbnail( get_the_ID(), array(670,335), array( 'class' => 'alignleft' ) );
-            } else {
-                $img_feature ='<img src="http://raasdev.raasgroup.com/wp-content/uploads/2019/05/sydney-lite.jpg" />';
             } 
-            $post_data .='<div class="w3eden" ><div id="equal_box" class="col-md-4 col-sm-6 col-xs-12"><a class="wpdm-download-link" rel="nofollow" href="'.site_url().'/download/'.get_the_title().'/?wpdmdl='.get_the_ID().'" download target="_blank"><div   id="main_box"><div class="srch-content"><div class="panel panel-default"><div class="panel-bodys"><div class="panel-footers" id="topp"><div class="col-md-4 col-sm-6 col-xs-12"><span class="categoryss">'.$List.'</span></div><div class="col-md-4 col-sm-6 col-xs-12"><span class="logoss"><img src="'.$image['url'].'"/></span></div><div class="col-md-4 col-sm-6 col-xs-12"><span class="entry-date">'.get_the_date('j M Y').'</span></div></div><div class="medias"><div class="name_posts"><strong class="ptitle '.get_the_ID().'">'.get_the_title().'</strong></div></div></div></div></div></div></div></a></div></div>';
-
+            else 
+            {
+                $img_feature ='<img src="http://raasdev.raasgroup.com/wp-content/uploads/2019/05/sydney-lite.jpg" />';
+            }
+            $post_data .= WriteTile(site_url(), get_the_title(), get_the_ID(), $imageurl, $List, get_the_date('j M Y'));
         endwhile;
-
+        
         global $wp_query;
         $big = 999999999; // need an unlikely integer
-        $post_data .='<div class="pagination">';
-        $post_data .= paginate_links( array(
-                    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-                    'format' => '?paged=%#%',
-                    'current' => max( 1, get_query_var('paged') ),
-                    'total' => $my_posts->max_num_pages));
 
         $post_data .='</div>';
-    
+/*
+        $post_data .='<div class="pagination">';
+        $post_data .= paginate_links( array(
+        'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+        'format' => '?paged=%#%',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $my_posts->max_num_pages) );
+*/        
         wp_reset_postdata();  
+ 
     else : 
 	$post_data .='<p>"'.esc_html_e( 'Sorry, no posts matched your criteria.' ).'"</p>';
     endif;  
-    
     $post_data .='</div>';
-   
     return $post_data;
 }
 
 add_shortcode( 'Search_research', 'research' ); 
-function research() {
+function research() 
+{
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-    $args = array('type'    => 'wpdmpro',
-		  'post_status'     => 'publish',
-		  'include' =>'73,74',
-                  'taxonomy' => 'wpdmcategory',
-		  'paged'  =>  $paged,
-                  'parent'  => 0);
+	    $args = array(
+		'type'    => 'wpdmpro',
+		'post_status'     => 'publish',
+		'include' =>'73,74,234',
+                'taxonomy' => 'wpdmcategory',
+		'paged'  =>  $paged,
+                'parent'  => 0
+           );
            $cats = get_categories($args);
-    ?>
-        
-    <form method = "post">
+    ?> 
+    <form method = "post" class="srch-content" style="width:100%; margin-bottom:0;>
 	<div class="row">
-	<div class="col-md-12">
-	<div class="col-md-4">
-            <select name="search_main" id="search_cat_parent">
-                <option value="">Select Below</option>
-                    <?php  foreach($cats as $cates) { 
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <select name="search_main" id="search_cat_parent">
+                        <option value="">Select Below</option>
+                        <?php  foreach($cats as $cates) { 
 		 	$cat_final_name=str_replace("[L]", "", $cates->name); ?>  
                         <option value="<?php echo $cates->term_id; ?>"><?php echo $cat_final_name; ?></option>
-                    <?php } ?>
-            </select>
-        </div>
-            
-	<div class="col-md-4" id="search_cat_sub">
-		<select name="search_main" class="child-cat-cls" id="child_of_childcategory">
-		   <option value="">Select Below</option>
-                    <?php foreach ( $categories as $category ) {?>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="" id="search_cat_sub">
+                    <select name="search_main" class="child-cat-cls" id="child_of_childcategory">
+                        <option value="">Select Below</option>
+                        <?php foreach ( $categories as $category ) {?>
                         <option value="<?php echo $category->term_id ; ?>"><?php echo $category->name; ?></option>
-                    <?php  } ?>
-		</select>
-	</div>
-
-	<div class="col-md-4" id="search_cat_sub2">
-		<select name="search_main" class="child_ofchild__childcategory" id="child_ofchild__childcategory">
-		   <option value="">Select Below</option>
-		<?php foreach ( $categories2 as $category ) {?>
-                    <option value="<?php echo $category->term_id ; ?>"><?php echo $category->name; ?></option>
-                <?php  } ?>
-		</select>
-	</div>
-	</div>
+                        <?php  } ?>
+                    </select>
+                </div>
+                <div class="" id="search_cat_sub2">
+                    <select name="search_main" class="child_ofchild__childcategory" id="child_ofchild__childcategory">
+                        <option value="">Select Below</option>
+                        <?php foreach ( $categories2 as $category ) {?>
+                        <option value="<?php echo $category->term_id ; ?>"><?php echo $category->name; ?></option>
+                        <?php  } ?>
+                    </select>
+                </div>
+            </div>
 	</div>
     </form>
     <?php 
 } 
 	
-function get_child_category_by_parent_id_func(){
-$data = array();
-$post_data=array();		
-$cat_ID=$_POST['parent_cat_id'];
+function get_child_category_by_parent_id_func()
+{
+    $data = array();
+    $post_data=array();		
+    $cat_ID=$_POST['parent_cat_id'];
 
-if($_POST['sub_cat_id'] == '' && $_POST['sub_child_cat_id'] == '' &&  $_POST['p_cat_val'] == 'true'){
-
-	if($_POST['parent_cat_id'] != ''){
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			 $args = array( 'hierarchical' => 1,
-							'type'    => 'wpdmpro',
-							'post_status'     => 'publish',
-						    'taxonomy' => 'wpdmcategory',
-						    'parent' =>  $cat_ID
-					);
+    if($_POST['sub_cat_id'] == '' && $_POST['sub_child_cat_id'] == '' &&  $_POST['p_cat_val'] == 'true')
+    {
+	if($_POST['parent_cat_id'] != '')
+        {
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array( 'hierarchical' => 1,
+			'type'    => 'wpdmpro',
+			'post_status'     => 'publish',
+                        'taxonomy' => 'wpdmcategory',
+			'parent' =>  $cat_ID);
 						
-		$categories = get_categories( $args );
+            $categories = get_categories( $args );
 	
-		if(!empty($categories)){
-		
-			$data[] = '<option value="">Select Below </option>';
-			foreach ( $categories as $category ) {
-				  $data[] .= '<option value="'.$category->term_id.'">'.$category->name.'</option>';
-			 }
-			
+            if(!empty($categories))
+            {
+		$data[] = '<option value="">Select Below </option>';
+		foreach ( $categories as $category ) 
+                {
+                    $data[] .= '<option value="'.$category->term_id.'">'.$category->name.'</option>';
 		}
-		else{ $data[] .='<option value="">Select Below </option><option value="">Not Found</option>'; }
-	}
-	
+            }
+            else
+            { 
+                $data[] .='<option value="">Select Below </option><option value="">Not Found</option>'; 
+            }
+        }
 	$sel_data="true";
+    }
+    else if($_POST['sub_cat_id'] != '')
+    {
+        $cat_ID=$_POST['sub_cat_id'];
+        $sel_data="false";
+        $data2=array();
+        $args3 = array( 'hierarchical' => 1,
+		'type'    => 'wpdmpro',
+		'post_status'     => 'publish',
+                'taxonomy' => 'wpdmcategory',
+		'parent' =>  $cat_ID);
 
-}
-else if($_POST['sub_cat_id'] != ''){
-$cat_ID=$_POST['sub_cat_id'];
-$sel_data="false";
-$data2=array();
- $args3 = array( 'hierarchical' => 1,
-							'type'    => 'wpdmpro',
-							'post_status'     => 'publish',
-						    'taxonomy' => 'wpdmcategory',
-						    'parent' =>  $cat_ID
-					);
-		$categories2 = get_categories( $args3 );
-		if(!empty($categories2)){
-			$data2[] = '<option value="">Select Below </option>';
-			foreach ( $categories2 as $category ) {
-				  $data2[] .= '<option value="'.$category->term_id.'">'.$category->name.'</option>';
-			 }  
-		}
-		else{ $data2[] .='<option value="">Select Below </option><option value="">Not Found</option>'; }
-		$sel_data="true_sub_cat";}
-else if($_POST['sub_child_cat_id'] != ''){
+        $categories2 = get_categories( $args3 );
+	if(!empty($categories2))
+        {
+            $data2[] = '<option value="">Select Below </option>';
+            foreach ( $categories2 as $category ) 
+            {
+                $data2[] .= '<option value="'.$category->term_id.'">'.$category->name.'</option>';
+            }  
+	}
+	else
+        { 
+            $data2[] .='<option value="">Select Below </option><option value="">Not Found</option>'; 
+        }
+        $sel_data="true_sub_cat";
+    }
+    else if($_POST['sub_child_cat_id'] != '')
+    {
 	$cat_ID=$_POST['sub_child_cat_id'];
-}
-else{
+    }
+    else
+    {
 	$sel_data="false";
-}	
-$order_val=($_POST['sort_by_val'] == "post_modified")?'DESC':'ASC';
-$args2 = array(
-'post_type'    => 'wpdmpro',	
-'posts_per_page' => 900,
-'post_status'     => 'publish',
-//'orderby' => $_POST['sort_by_val'],
-//'order' => $order_val, 			
-'paged'  =>  $paged,			
-'tax_query' => array(
-		array(
-		  'taxonomy' => 'wpdmcategory',
-		  'field' => 'term_id',
-		  'terms' => $cat_ID
-) ) ); 
+    }
 
- $my_posts = new WP_Query($args2);
+    $order_val=($_POST['sort_by_val'] == "post_modified")?'DESC':'ASC';
+    $args2 = array(
+        'post_type'    => 'wpdmpro',	
+        'posts_per_page' => 900,
+        'post_status'     => 'publish',
+        //'orderby' => $_POST['sort_by_val'],
+        //'order' => $order_val, 			
+        'paged'  =>  $paged,			
+        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'wpdmcategory',
+                                'field' => 'term_id',
+                                'terms' => $cat_ID
+                        ) 
+                ) 
+        ); 
 
- $par_ct=($_POST['parent_cat_id'] != "")?get_the_category_by_ID($_POST['parent_cat_id']):'';
-$sub_ct=($_POST['sub_cat_id'] != "")?"| ".get_the_category_by_ID($_POST['sub_cat_id']):''; 
-$all_cat_data=$par_ct.' '.$sub_ct;
-$cat_arr=array();
-		if ( $my_posts->have_posts() ) : 
-		while ( $my_posts->have_posts() ) : $my_posts->the_post();
-		$cat_sub_data=array();
-		$all_cat_arr = wp_get_post_terms(get_the_ID(), 'wpdmcategory', array("fields" => "all"));
-		if(!empty($all_cat_arr)){
-		foreach($all_cat_arr as $all_cat_val){
+     $my_posts = new WP_Query($args2);
+
+    $par_ct=($_POST['parent_cat_id'] != "")?get_the_category_by_ID($_POST['parent_cat_id']):'';
+    $sub_ct=($_POST['sub_cat_id'] != "")?"| ".get_the_category_by_ID($_POST['sub_cat_id']):''; 
+    $all_cat_data=$par_ct.' '.$sub_ct;
+    $cat_arr=array();
+
+    if ( $my_posts->have_posts() ) : 
+	while ( $my_posts->have_posts() ) : $my_posts->the_post();
+            $cat_sub_data=array();
+            $all_cat_arr = wp_get_post_terms(get_the_ID(), 'wpdmcategory', array("fields" => "all"));
+            if(!empty($all_cat_arr))
+            {
+		foreach($all_cat_arr as $all_cat_val)
+                {
 			$cat_sub_data[]=$all_cat_val->name;
 		}
-		}
-		$List = implode(':',$cat_sub_data); 
+            }
+            $List = implode(':',$cat_sub_data); 
 		
-		$image = get_field('company_logo');
-	 if ( has_post_thumbnail() ) {
-      $img_feature =  get_the_post_thumbnail( get_the_ID(), array(600,300), array( 'class' => 'alignleft' ) );
-			} else {
-			$img_feature ='<img src="http://raasdev.raasgroup.com/wp-content/uploads/2019/05/sydney-lite.jpg" />';
-			} 
+            $image = get_field('company_logo');
+            $imageurl = $image['url'];
 
-		$post_data[] .='<div class="w3eden"><div id="equal_box" class="col-md-4 col-sm-6 col-xs-12"><a class="wpdm-download-link" rel="nofollow" href="'.site_url().'/download/'.get_the_title().'/?wpdmdl='.get_the_ID().'" download target="_blank"><div   id="main_box"><div class="srch-content"><div class="panel panel-default"><div class="panel-bodys"><div class="panel-footers" id="topp"><div class="col-md-4 col-sm-6 col-xs-12"><span class="categoryss">'.$List.'</span></div><div class="col-md-4 col-sm-6 col-xs-12"><span class="logoss"><img src="'.$image['url'].'"/></span></div><div class="col-md-4 col-sm-6 col-xs-12"><span class="entry-date">'.get_the_date('j M Y').'</span></div></div><div class="medias"><div class="name_posts"><strong class="ptitle '.get_the_ID().'">'.get_the_title().'</strong></div></div></div></div></div></div></div></a></div></div>';
-endwhile;
+            if ( has_post_thumbnail() ) 
+            {
+                $img_feature =  get_the_post_thumbnail( get_the_ID(), array(600,300), array( 'class' => 'alignleft' ) );
+            } 
+            else 
+            {
+		$img_feature ='<img src="http://raasdev.raasgroup.com/wp-content/uploads/2019/05/sydney-lite.jpg" />';
+            } 
+            $post_data[] .= WriteTile(site_url(), get_the_title(), get_the_ID(), $imageurl, $List, get_the_date('j M Y'));
+        endwhile;
 
- wp_reset_postdata();  
- else : 
+        wp_reset_postdata();  
+    else : 
 	$post_data[] .='<p>"'.esc_html_e( 'Sorry, no posts matched your criteria.' ).'"</p>';
- endif;  
- echo json_encode(array("option_val" => $data,"option_val2" => $data2 ,"post_val" => $post_data, "sel_data_key" => $sel_data,"sel_data_key2" => $all_cat_data));
-die();
+    endif;  
+    echo json_encode(array("option_val" => $data,"option_val2" => $data2 ,"post_val" => $post_data, "sel_data_key" => $sel_data,"sel_data_key2" => $all_cat_data));
+    die();
 }
+
+function WriteTile($url, $title, $tile_id, $imageurl, $tile_list, $tile_date)
+{
+    $ticker = substr($title, 0, strpos($title, ' '));
+    $start = strpos($title, 'RaaS');
+ //   if (!$start)
+ //       $start = strpos($title, 'SMC');
+    if (!start)
+        $strDesc = $ticker . 'xxx' . substr($title, strlen($ticker) + 1, strlen($title) - 10);
+    else
+        $strDesc = $ticker . ' ' . substr($title, $start, strlen($title) - $start - 10);
+    
+    $tileCode .=
+          '<div class="w3eden">'
+        . '<div id="equal_box" class="col-md-4 col-sm-6 col-xs-12">'
+        . '<a class="wpdm-download-link" rel="nofollow" href="'.$url.'/download/'.$title.'/?wpdmdl='.$tile_id.'" download target="_blank">'
+                . '<div   id="main_box"><div class="srch-content">'
+                . '<div class="panel panel-default">'
+                . '<div class="panel-bodys">'
+                . '<div class="panel-footers" id="topp">'
+                        . '<div class="col-md-4 col-sm-6 col-xs-12">'
+                        . '<span class="categoryss">'.$tile_list.''
+                        . '</span>'
+                        . '</div>'
+                        . '<div class="col-md-4 col-sm-6 col-xs-12">'
+                        . '<span class="logoss">'
+//                       . '<span style="display:'
+//                        . 'block;'
+//                        . 'height:100%;'
+//                        . 'width:100%;'
+//                        . 'background-image:url('.$imageurl.');'
+//                        . 'background-size:contain;'
+//                        . 'background-repeat:no-repeat;'
+//                        . 'background-position:center;'
+//                        . 'background-size:70%;'
+//                        . '"/>'
+                        . '<img data-src="'.$imageurl.'" src="" class="lazyload"/>'
+                        . '</div>'
+                        . '<div class="col-md-4 col-sm-6 col-xs-12">'
+                        . '<span class="entry-date">'.$tile_date.'</span>'
+                        . '</div>'
+                        . '</div>'
+                        . '<div class="medias">'
+                        . '<div class="name_posts">'
+                        . '<strong class="ptitle '.$tile_id.'">'.$strDesc.'</strong>'
+                        . '</div>'
+                        . '</div>'
+                        . '</div>'
+                        . '</div>'
+                 . '</div></div></div></a></div></div>';
+
+    return $tileCode;
+}
+
 add_action( 'wp_ajax_get_child_category_by_parent_id_func', 'get_child_category_by_parent_id_func' );
 add_action( 'wp_ajax_nopriv_get_child_category_by_parent_id_func', 'get_child_category_by_parent_id_func' );
+
 /* Our research filter Custom code end */
