@@ -35,13 +35,14 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 !wp-content/uploads/
+!sql_scripts/
 
 # ignore all mu-plugins, plugins, and themes
 # unless explicitly whitelisted at the end of this file
-wp-content/mu-plugins/*
-wp-content/plugins/*
-wp-content/themes/*
-wp-content/uploads/*
+#wp-content/mu-plugins/*
+#wp-content/plugins/*
+#wp-content/themes/*
+#wp-content/uploads/*
 
 # ignore all files starting with . or ~
 .*
