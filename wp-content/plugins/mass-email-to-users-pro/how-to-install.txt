@@ -1,0 +1,20 @@
+1.If you have installed lite version then deactivate plugin first and delete lite version from plugin management.
+
+
+2.Now install this plugin from plugin management.
+
+-----------------------Or-----------------------------------
+
+2.You can extract and upload this plugin to wp-content/plugins and activate it from plugin management.
+
+
+Still you have truble running this plugin
+ 
+Email For support here
+
+1)nik_gandhi007@yahoo.com
+2)nvgandhi123@gmail.com
+
+
+
+Thanks

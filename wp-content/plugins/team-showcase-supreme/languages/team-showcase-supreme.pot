@@ -1,0 +1,35 @@
+# Copyright (C) 2023 Sk. Abul Hasan
+# This file is distributed under the same license as the Team Member – Multi Language Supported Team Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Team Member – Multi Language Supported Team Plugin 5.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/team-showcase-supreme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-10-17T04:42:23+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: team-showcase-supreme\n"
+
+#. Plugin Name of the plugin
+msgid "Team Member – Multi Language Supported Team Plugin"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/team-showcase-supreme"
+msgstr ""
+
+#. Description of the plugin
+msgid "Team Members is a powerful &amp; robust but easy to represent your team/staff members and their profiles with animated &amp; beautiful styled descriptions, skills &amp; links to social media."
+msgstr ""
+
+#. Author of the plugin
+msgid "Sk. Abul Hasan"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.wpmart.org/"
+msgstr ""

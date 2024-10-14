@@ -1,0 +1,583 @@
+# Copyright (C) 2022 WordPress Mass Email to users Pro
+# This file is distributed under the same license as the WordPress Mass Email to users Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Mass Email to users Pro 1.27\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mass-email-to-"
+"users-pro\n"
+"POT-Creation-Date: 2022-02-14 14:26:20+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: wordpressmassemail.php:80
+msgid "every five min"
+msgstr ""
+
+#: wordpressmassemail.php:742
+msgid "You are successfully unsubscribed from email newsletter.Thank you..."
+msgstr ""
+
+#: wordpressmassemail.php:894
+msgid "Mass Email"
+msgstr ""
+
+#: wordpressmassemail.php:895 wordpressmassemail.php:4300
+msgid "Cronjob Settings"
+msgstr ""
+
+#: wordpressmassemail.php:896 wordpressmassemail.php:4714
+msgid "Send Newsletter"
+msgstr ""
+
+#: wordpressmassemail.php:897 wordpressmassemail.php:4883
+msgid "Newsletter Log"
+msgstr ""
+
+#: wordpressmassemail.php:898 wordpressmassemail.php:3505
+msgid "Manage Email Templates"
+msgstr ""
+
+#: wordpressmassemail.php:899
+msgid "Unsubscribers List"
+msgstr ""
+
+#: wordpressmassemail.php:902
+msgid "BuddyPress Fields"
+msgstr ""
+
+#: wordpressmassemail.php:1092
+msgid "Email sent successfully."
+msgstr ""
+
+#: wordpressmassemail.php:1106
+msgid "Unable to send email to users."
+msgstr ""
+
+#: wordpressmassemail.php:1181
+msgid "Email queue updated successfully."
+msgstr ""
+
+#: wordpressmassemail.php:1191
+msgid "Email queue reseted successfully."
+msgstr ""
+
+#: wordpressmassemail.php:1204 wordpressmassemail.php:1252
+#: wordpressmassemail.php:1289 wordpressmassemail.php:1505
+#: wordpressmassemail.php:1827 wordpressmassemail.php:2888
+#: wordpressmassemail.php:3472 wordpressmassemail.php:4457
+#: wordpressmassemail.php:4848
+msgid "Access Denied"
+msgstr ""
+
+#: wordpressmassemail.php:1233 wordpressmassemail.php:2911
+msgid "Selected users subscription updated successfully."
+msgstr ""
+
+#: wordpressmassemail.php:1513
+msgid "Send Email to Users"
+msgstr ""
+
+#: wordpressmassemail.php:1549 wordpressmassemail.php:4570
+msgid "Load Email Template"
+msgstr ""
+
+#: wordpressmassemail.php:1589 wordpressmassemail.php:3623
+#: wordpressmassemail.php:3626 wordpressmassemail.php:3628
+#: wordpressmassemail.php:3683 wordpressmassemail.php:3940
+#: wordpressmassemail.php:4623 wordpressmassemail.php:5003
+#: wordpressmassemail.php:5006 wordpressmassemail.php:5008
+#: wordpressmassemail.php:5059
+msgid "Subject"
+msgstr ""
+
+#: wordpressmassemail.php:1596 wordpressmassemail.php:3947
+#: wordpressmassemail.php:4630
+msgid "Email From Name"
+msgstr ""
+
+#: wordpressmassemail.php:1599 wordpressmassemail.php:3950
+#: wordpressmassemail.php:4633
+msgid "(ex. admin)"
+msgstr ""
+
+#: wordpressmassemail.php:1605 wordpressmassemail.php:3956
+#: wordpressmassemail.php:4639
+msgid "Email From"
+msgstr ""
+
+#: wordpressmassemail.php:1608 wordpressmassemail.php:3959
+#: wordpressmassemail.php:4642
+msgid "(ex. admin@yoursite.com)"
+msgstr ""
+
+#: wordpressmassemail.php:1614
+msgid "Email To"
+msgstr ""
+
+#: wordpressmassemail.php:1621 wordpressmassemail.php:3965
+#: wordpressmassemail.php:4649
+msgid "Email Body"
+msgstr ""
+
+#: wordpressmassemail.php:1628 wordpressmassemail.php:3972
+msgid "you can use"
+msgstr ""
+
+#: wordpressmassemail.php:1676 wordpressmassemail.php:4020
+msgid "place holder into email content"
+msgstr ""
+
+#: wordpressmassemail.php:1684
+msgid "Send Email"
+msgstr ""
+
+#: wordpressmassemail.php:1711 wordpressmassemail.php:4059
+msgid "Please enter email content"
+msgstr ""
+
+#: wordpressmassemail.php:2064
+msgid "Send email to users"
+msgstr ""
+
+#: wordpressmassemail.php:2156 wordpressmassemail.php:2363
+#: wordpressmassemail.php:2377
+msgid "Search User"
+msgstr ""
+
+#: wordpressmassemail.php:2162 wordpressmassemail.php:2450
+#: wordpressmassemail.php:4611
+msgid "Role(s)"
+msgstr ""
+
+#: wordpressmassemail.php:2165 wordpressmassemail.php:4613
+msgid "All Roles"
+msgstr ""
+
+#: wordpressmassemail.php:2169
+msgid "BuddyPress Groups"
+msgstr ""
+
+#: wordpressmassemail.php:2172
+msgid "All Groups"
+msgstr ""
+
+#: wordpressmassemail.php:2363 wordpressmassemail.php:2377
+#: wordpressmassemail.php:3584 wordpressmassemail.php:4964
+#: wordpressmassemail.php:5218
+msgid "Reset Search"
+msgstr ""
+
+#: wordpressmassemail.php:2424 wordpressmassemail.php:2430
+#: wordpressmassemail.php:2435 wordpressmassemail.php:3069
+#: wordpressmassemail.php:3075 wordpressmassemail.php:3080
+#: wordpressmassemail.php:5346
+msgid "Email"
+msgstr ""
+
+#: wordpressmassemail.php:2441 wordpressmassemail.php:2444
+#: wordpressmassemail.php:2446 wordpressmassemail.php:3086
+#: wordpressmassemail.php:3089 wordpressmassemail.php:3091
+#: wordpressmassemail.php:3102
+msgid "Username"
+msgstr ""
+
+#: wordpressmassemail.php:2449 wordpressmassemail.php:3095
+#: wordpressmassemail.php:3103 wordpressmassemail.php:5252
+#: wordpressmassemail.php:5255 wordpressmassemail.php:5257
+#: wordpressmassemail.php:5262 wordpressmassemail.php:5265
+#: wordpressmassemail.php:5267 wordpressmassemail.php:5345
+msgid "Name"
+msgstr ""
+
+#: wordpressmassemail.php:2453
+msgid "User Group(s)"
+msgstr ""
+
+#: wordpressmassemail.php:2612 wordpressmassemail.php:3144
+msgid "Per Page"
+msgstr ""
+
+#: wordpressmassemail.php:2645
+msgid ""
+"It is not recommaded to send email to all at once as there is always hosting "
+"server limit for send emails horly basis.Most of hosting providers allow 250 "
+"emails per hour.Please use cronjob newsletter to send email automatically.Do "
+"you still want to continue ?"
+msgstr ""
+
+#: wordpressmassemail.php:2655
+msgid "Send Email To Selected Users"
+msgstr ""
+
+#: wordpressmassemail.php:2655
+msgid "Send Email to Filtered Users"
+msgstr ""
+
+#: wordpressmassemail.php:2655
+msgid "Send Email To All Users"
+msgstr ""
+
+#: wordpressmassemail.php:2655
+msgid "Add/Update Selected Emails To Queue"
+msgstr ""
+
+#: wordpressmassemail.php:2656
+msgid "Unsubscribe Selected Users"
+msgstr ""
+
+#: wordpressmassemail.php:2666
+msgid "Emails In Queue"
+msgstr ""
+
+#: wordpressmassemail.php:2684
+msgid "Send Email To users In Queue"
+msgstr ""
+
+#: wordpressmassemail.php:2684
+msgid "Reset Email Queue"
+msgstr ""
+
+#: wordpressmassemail.php:2699
+msgid "No Users Found"
+msgstr ""
+
+#: wordpressmassemail.php:2700 wordpressmassemail.php:3197
+msgid "Click Here To Continue.."
+msgstr ""
+
+#: wordpressmassemail.php:2818 wordpressmassemail.php:2847
+msgid "Please select atleast one email."
+msgstr ""
+
+#: wordpressmassemail.php:2824
+msgid "Please select atleast one email to delete."
+msgstr ""
+
+#: wordpressmassemail.php:2854
+msgid "Are you sure you want to unsubscribe selected users?"
+msgstr ""
+
+#: wordpressmassemail.php:2995
+msgid "Unsubscribed users"
+msgstr ""
+
+#: wordpressmassemail.php:3101
+msgid "Select All Emails"
+msgstr ""
+
+#: wordpressmassemail.php:3175
+msgid "Subscribe Again"
+msgstr ""
+
+#: wordpressmassemail.php:3196
+msgid "No Email unsubscription Found"
+msgstr ""
+
+#: wordpressmassemail.php:3276
+msgid "Please select atleast one email"
+msgstr ""
+
+#: wordpressmassemail.php:3505
+msgid "Add New"
+msgstr ""
+
+#: wordpressmassemail.php:3510 wordpressmassemail.php:3713
+#: wordpressmassemail.php:4906 wordpressmassemail.php:5089
+msgid "Bulk Actions"
+msgstr ""
+
+#: wordpressmassemail.php:3511 wordpressmassemail.php:3643
+#: wordpressmassemail.php:3686 wordpressmassemail.php:3714
+#: wordpressmassemail.php:5022 wordpressmassemail.php:5062
+#: wordpressmassemail.php:5090
+msgid "Delete"
+msgstr ""
+
+#: wordpressmassemail.php:3513 wordpressmassemail.php:3717
+#: wordpressmassemail.php:4909 wordpressmassemail.php:5093
+msgid "Apply"
+msgstr ""
+
+#: wordpressmassemail.php:3581 wordpressmassemail.php:3583
+#: wordpressmassemail.php:4961 wordpressmassemail.php:4963
+msgid "Search"
+msgstr ""
+
+#: wordpressmassemail.php:3613 wordpressmassemail.php:3616
+#: wordpressmassemail.php:3618 wordpressmassemail.php:3682
+#: wordpressmassemail.php:4993 wordpressmassemail.php:4996
+#: wordpressmassemail.php:4998 wordpressmassemail.php:5058
+#: wordpressmassemail.php:5242 wordpressmassemail.php:5245
+#: wordpressmassemail.php:5247 wordpressmassemail.php:5344
+msgid "Id"
+msgstr ""
+
+#: wordpressmassemail.php:3633 wordpressmassemail.php:3636
+#: wordpressmassemail.php:3638 wordpressmassemail.php:3684
+#: wordpressmassemail.php:5012 wordpressmassemail.php:5015
+#: wordpressmassemail.php:5017 wordpressmassemail.php:5060
+msgid "Created On"
+msgstr ""
+
+#: wordpressmassemail.php:3642 wordpressmassemail.php:3685
+msgid "Edit"
+msgstr ""
+
+#: wordpressmassemail.php:3681 wordpressmassemail.php:5057
+msgid "Select Record"
+msgstr ""
+
+#: wordpressmassemail.php:3695
+msgid "No Record"
+msgstr ""
+
+#: wordpressmassemail.php:3695
+msgid "No Email Templates Found"
+msgstr ""
+
+#: wordpressmassemail.php:3730
+msgid "Are you sure you want to delete selected email template?"
+msgstr ""
+
+#: wordpressmassemail.php:3740
+msgid "Are you sure you want to delete this email template?"
+msgstr ""
+
+#: wordpressmassemail.php:3788 wordpressmassemail.php:3822
+#: wordpressmassemail.php:3865 wordpressmassemail.php:3899
+#: wordpressmassemail.php:4117 wordpressmassemail.php:4168
+msgid "Access Denied. Please contact your administrator"
+msgstr ""
+
+#: wordpressmassemail.php:3931
+msgid "Update Email Template"
+msgstr ""
+
+#: wordpressmassemail.php:3933
+msgid "Add Email Template"
+msgstr ""
+
+#: wordpressmassemail.php:4032
+msgid "Save Email Template"
+msgstr ""
+
+#: wordpressmassemail.php:4138
+msgid "Email template deleted successfully."
+msgstr ""
+
+#: wordpressmassemail.php:4147
+msgid "Error while deleting email template."
+msgstr ""
+
+#: wordpressmassemail.php:4195
+msgid "Selected email templates deleted successfully."
+msgstr ""
+
+#: wordpressmassemail.php:4203
+msgid "Error while deleting email templates."
+msgstr ""
+
+#: wordpressmassemail.php:4252
+msgid "Settings saved successfully."
+msgstr ""
+
+#: wordpressmassemail.php:4308
+msgid "Cronjob settings"
+msgstr ""
+
+#: wordpressmassemail.php:4311
+msgid "Allowed Emails Per Hours By Your Hosting"
+msgstr ""
+
+#: wordpressmassemail.php:4328
+msgid "Wait In Seconds Between Two Email"
+msgstr ""
+
+#: wordpressmassemail.php:4335
+msgid ""
+"some host not allow continuous emails to send , So add wait between emails "
+"in seconds"
+msgstr ""
+
+#: wordpressmassemail.php:4345
+msgid "Set bellow cronjob to run every 5 minute"
+msgstr ""
+
+#: wordpressmassemail.php:4350
+msgid "There are three ways to set cronjob.Please use only one"
+msgstr ""
+
+#: wordpressmassemail.php:4360 wordpressmassemail.php:4376
+#: wordpressmassemail.php:4394
+msgid "see example"
+msgstr ""
+
+#: wordpressmassemail.php:4365 wordpressmassemail.php:4381
+msgid "OR"
+msgstr ""
+
+#: wordpressmassemail.php:4388
+msgid "It is just example.use your appropriate path"
+msgstr ""
+
+#: wordpressmassemail.php:4408
+msgid "Save Changes"
+msgstr ""
+
+#: wordpressmassemail.php:4533
+msgid ""
+"Sit back relax. All newsletter subscribers added into queue. Emails will be "
+"sent automatically via cronjob"
+msgstr ""
+
+#: wordpressmassemail.php:4541
+msgid "Send Email To Users"
+msgstr ""
+
+#: wordpressmassemail.php:4660
+msgid ""
+"You can use [user_full_name],[user_email],[unsubscribe_link_plain],"
+"[unsubscribe_link_html]"
+msgstr ""
+
+#: wordpressmassemail.php:4705
+msgid " place holder into email content"
+msgstr ""
+
+#: wordpressmassemail.php:4907
+msgid "delete"
+msgstr ""
+
+#: wordpressmassemail.php:5021
+msgid "Email Log"
+msgstr ""
+
+#: wordpressmassemail.php:5061
+msgid "Click To View Log"
+msgstr ""
+
+#: wordpressmassemail.php:5071 wordpressmassemail.php:5358
+msgid "No Records"
+msgstr ""
+
+#: wordpressmassemail.php:5071 wordpressmassemail.php:5358
+msgid "No Newsletter Logs"
+msgstr ""
+
+#: wordpressmassemail.php:5106 wordpressmassemail.php:5384
+msgid ""
+"Are you sure you want to delete selected newsletter ? It will also delete "
+"email log for selected newsletters"
+msgstr ""
+
+#: wordpressmassemail.php:5116 wordpressmassemail.php:5394
+msgid ""
+"Are you sure you want to delete this newsletter ? It will also delete email "
+"log for this newsletters"
+msgstr ""
+
+#: wordpressmassemail.php:5173
+msgid "Email Log For : "
+msgstr ""
+
+#: wordpressmassemail.php:5211 wordpressmassemail.php:5218
+msgid "Filter By Status"
+msgstr ""
+
+#: wordpressmassemail.php:5213
+msgid "Select ..."
+msgstr ""
+
+#: wordpressmassemail.php:5214 wordpressmassemail.php:5347
+msgid "In Queue"
+msgstr ""
+
+#: wordpressmassemail.php:5215 wordpressmassemail.php:5347
+msgid "Sent Successfully"
+msgstr ""
+
+#: wordpressmassemail.php:5216 wordpressmassemail.php:5347
+msgid "Fail"
+msgstr ""
+
+#: wordpressmassemail.php:5272 wordpressmassemail.php:5275
+#: wordpressmassemail.php:5277 wordpressmassemail.php:5347
+msgid "Status"
+msgstr ""
+
+#: wordpressmassemail.php:5282 wordpressmassemail.php:5285
+#: wordpressmassemail.php:5287 wordpressmassemail.php:5348
+msgid "Sent On"
+msgstr ""
+
+#: wordpressmassemail.php:5445
+msgid "Newsletter and email log deleted successfully."
+msgstr ""
+
+#: wordpressmassemail.php:5454
+msgid "Error while deleting Newsletter."
+msgstr ""
+
+#: wordpressmassemail.php:5494
+msgid "Selected newsletter and its email logs deleted successfully."
+msgstr ""
+
+#: wordpressmassemail.php:5502
+msgid "Error while deleting newsletter."
+msgstr ""
+
+#: wordpressmassemail.php:5550
+msgid "Selected options updated successfully."
+msgstr ""
+
+#: wordpressmassemail.php:5587
+msgid "Select BuddyPress Fields you want to show in filters and list"
+msgstr ""
+
+#: wordpressmassemail.php:5595
+msgid "Field"
+msgstr ""
+
+#: wordpressmassemail.php:5596 wordpressmassemail.php:5605
+msgid "Show in List"
+msgstr ""
+
+#: wordpressmassemail.php:5597 wordpressmassemail.php:5606
+msgid "Show in Filter"
+msgstr ""
+
+#: wordpressmassemail.php:5604
+msgid "Field Name"
+msgstr ""
+
+#: wordpressmassemail.php:5623
+msgid "BuddyPress User Groups"
+msgstr ""
+
+#: wordpressmassemail.php:5714
+msgid "Save"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress Mass Email to users Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.i13websolution.com/product/wordpress-bulk-email-pro-plugin/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Plugin for send mass email to registered users."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "I Thirteen Web Solution"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.i13websolution.com"
+msgstr ""
